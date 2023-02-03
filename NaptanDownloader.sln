@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaptanDownloader", "NaptanDownloader\NaptanDownloader.csproj", "{9F6F1A0D-F2C6-4C8C-834E-F66A2B5FF9AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F6F1A0D-F2C6-4C8C-834E-F66A2B5FF9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6F1A0D-F2C6-4C8C-834E-F66A2B5FF9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6F1A0D-F2C6-4C8C-834E-F66A2B5FF9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6F1A0D-F2C6-4C8C-834E-F66A2B5FF9AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
