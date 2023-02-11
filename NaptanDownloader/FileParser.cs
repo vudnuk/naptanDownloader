@@ -22,8 +22,8 @@ public class FileParser
 
     public string RemoveDuplicates(string list)
     {
-        list = string.Join(",", list.Split(',').Distinct());
-        return list;
+        return string.Join(",", list.Split(',').Distinct());
+        
     }
 
     public List<string> SplitStringIntoList(string list)

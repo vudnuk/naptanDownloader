@@ -97,22 +97,4 @@ public class ProgramTest
             File.Delete(filePath);
         }
     }
-
-
-    // public async void ShouldDownloadFiles()
-    // {
-    //     var list = "[\"490\",\"639\",\"21\",\"190\",\"649\",\"668\",\"40\",\"40\",\"\u00a0\",\"650\"";
-    //     var fileParser = new FileParser();
-    //
-    //     var cleanedList = fileParser.RemoveDuplicates(fileParser.RemoveSpecialCharactersExceptQuotes(list));
-    //     var newerList = fileParser.SplitStringIntoList(cleanedList);
-    //     Console.WriteLine(newerList);
-    //
-    //     await fileParser.DownloadMultipleFiles(newerList);
-    //     
-    //     
-    // }
-    
-    // How to write a test to make sure it's downloading the file correctly?
-    // Next step - reading content from file
 }
