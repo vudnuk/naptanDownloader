@@ -55,9 +55,6 @@ public class FileParser
         {
             throw new Exception("Exception on local authority: " + localAuthority, e);
         }
-        
-        
-        
     }
     public async Task DownloadMultipleFiles(List<string> localAuthorities)
     {
@@ -67,8 +64,19 @@ public class FileParser
         }
     }
 
-    public object MakeLocalAuthoritiesThreeCharacters(List<string> localAuthorities)
+    public List<string> MakeLocalAuthoritiesThreeCharacters(List<string> localAuthorities)
     {
-        throw new NotImplementedException();
+        var threeCharacterLAs = new List<string>();
+        foreach (var localAuthority in localAuthorities)
+        {
+            if (localAuthority.Length < 3)
+            {
+                var editedLA = localAuthority.Insert(0,"0");
+                threeCharacterLAs.Add(editedLA);
+                continue;
+            }
+            threeCharacterLAs.Add(localAuthority);
+        }
+        return threeCharacterLAs;
     }
 }

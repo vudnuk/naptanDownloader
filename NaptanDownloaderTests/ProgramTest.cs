@@ -53,7 +53,7 @@ public class ProgramTest
     }
 
     [Fact]
-    public async void ShouldMakeSuccessfulAPICall()
+    public async void ShouldMakeSuccessfulAPICallAndDownloadFile()
     {
         var localAuthority = "460";
         var fileParser = new FileParser();
