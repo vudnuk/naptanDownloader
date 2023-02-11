@@ -43,12 +43,22 @@ public class ProgramTest
     }
     
     [Fact]
+    public void ShouldMakeLocalAuthoritiesThreeCharactersInLength()
+    {
+        List<string> localAuthorities = new List<string>(){"490","639","21","190","649","668","40","650"};
+        var fileParser = new FileParser();
+
+        var result = fileParser.MakeLocalAuthoritiesThreeCharacters(localAuthorities);
+        result.Should().BeEquivalentTo(new List<string>(){ "490", "639", "021", "190", "649", "668", "040", "650" });
+    }
+
+    [Fact]
     public async void ShouldMakeSuccessfulAPICall()
     {
         var localAuthority = "460";
         var fileParser = new FileParser();
         
-        var exception = await Record.ExceptionAsync (async () => await fileParser.GetStatusCodeForOneLocalAuthority(localAuthority));
+        var exception = await Record.ExceptionAsync (async () => await fileParser.MakeAPICallToDownloadFile(localAuthority));
         
         Assert.Null(exception);
         
@@ -64,7 +74,7 @@ public class ProgramTest
         var invalidLocalAuthority = "ghbjkl";
         var fileParser = new FileParser();
         
-        var exception = await Record.ExceptionAsync (async () => await fileParser.GetStatusCodeForOneLocalAuthority(invalidLocalAuthority));
+        var exception = await Record.ExceptionAsync (async () => await fileParser.MakeAPICallToDownloadFile(invalidLocalAuthority));
         
         Assert.NotNull(exception);
     }
@@ -87,7 +97,6 @@ public class ProgramTest
             File.Delete(filePath);
         }
     }
-    
 
 
     // public async void ShouldDownloadFiles()

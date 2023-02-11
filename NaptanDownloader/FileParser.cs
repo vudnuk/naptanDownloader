@@ -31,7 +31,7 @@ public class FileParser
         return new List<string>(list.Split(','));
     }
 
-    public async Task GetStatusCodeForOneLocalAuthority(string localAuthority)
+    public async Task MakeAPICallToDownloadFile(string localAuthority)
     {
         var url = $"https://naptan.api.dft.gov.uk/v1/access-nodes?dataFormat=xml&atcoAreaCodes={localAuthority}";
         var filePath = $@"/Users/victoriakundu/RiderProjects/NaptanDownloader/NaptanDownloader/Files/{localAuthority}.xml";
@@ -59,14 +59,16 @@ public class FileParser
         
         
     }
-    
-
-    
     public async Task DownloadMultipleFiles(List<string> localAuthorities)
     {
         foreach (var localAuthority in localAuthorities)
         {
-            await GetStatusCodeForOneLocalAuthority(localAuthority);
+            await MakeAPICallToDownloadFile(localAuthority);
         }
+    }
+
+    public object MakeLocalAuthoritiesThreeCharacters(List<string> localAuthorities)
+    {
+        throw new NotImplementedException();
     }
 }
